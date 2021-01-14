@@ -1,9 +1,9 @@
 from random import randint
 
 def jogar():
-    print("*************************************")
-    print("***Vamos jogar: Adivinhe o número!***")
-    print("*************************************")
+    print("**************************************")
+    print("***Vamos jogar: Adivinhe o número!!***")
+    print("**************************************")
 
     min_number = 1
     max_number = 100
