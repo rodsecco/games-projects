@@ -39,6 +39,7 @@ def jogar():
 
         if(int_guess < min_number or int_guess > max_number):
             print("Você pode apenas digitar números entre {} e {}".format(min_number, max_number))
+            print("Você tem mais {} tentativas!".format(remaining_tries), sep=" ")
             continue
 
         acertou = int_guess == random_number
