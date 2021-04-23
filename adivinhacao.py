@@ -32,6 +32,8 @@ def jogar():
 
     for round in range(1, tries + 1):
 
+        remaining_tries = tries - round
+
         guess = input("Digite um número entre {} e {}: ".format(min_number, max_number))
         int_guess = int(guess)
 
@@ -43,8 +45,8 @@ def jogar():
             continue
 
         acertou = int_guess == random_number
-        maior = int_guess > random_number
-        menor = int_guess < random_number
+        maior = int_guess < random_number
+        menor = int_guess > random_number
 
         if (acertou):
             print("Parabéns, você acertou!", "-> Número secreto: {}".format(random_number), end="\n")
@@ -52,13 +54,12 @@ def jogar():
             break
         else:
             if(menor):
-                print("Resposta errada, o número digitado é menor que o número secreto!")
+                print("Resposta errada, o número secreto é menor que o número digitado!")
             elif(maior):
-                print("Resposta errada, o número digitado é maior que o número secreto!")
+                print("Resposta errada, o número secreto é maior que o número digitado!")
             lost_points = abs(random_number - int_guess)
             points = points - lost_points
 
-            remaining_tries = tries - round
             print("Você tem mais {} tentativas!".format(remaining_tries), sep=" ")
     else:
         print("Você perdeu, o número era: {}!".format(random_number))
